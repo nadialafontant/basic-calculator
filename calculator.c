@@ -22,21 +22,47 @@ double divide (double a, double b) {
 
 int main() {
     double num1, num2;
+    char operator;
 
-    printf("Enter two integers:");
-    scanf("%lf %lf", &num1, &num2);
+    printf("Enter two integers and an operator (+, -, *, /): ");
+    scanf("%lf %lf %c", &num1, &num2, &operator);
 
-    double sum = add(num1, num2);
-    printf("By addition, %lf + %lf = %lf\n", num1, num2, sum);
+    if (operator == '+') {
+        double sum = add(num1, num2);
+        printf("By addition, %lf + %lf = %lf\n", num1, num2, sum);
+    }
 
-    double difference = subtract(num1, num2);
-    printf("By subtraction, %lf - %lf = %lf\n", num1, num2, difference);
+    else if (operator == '-') {
+        double difference = subtract(num1, num2);
+        printf("By subtraction, %lf - %lf = %lf\n", num1, num2, difference);
+    }
 
-    double product = multiply(num1, num2);
-    printf("By multiplication, %lf * %lf = %lf\n", num1, num2, product);
+    else if (operator == '*') {
+        double product = multiply(num1, num2);
+        printf("By multiplication, %lf * %lf = %lf\n", num1, num2, product);
+    }
 
-    double quotient = divide(num1, num2);
-    printf("By division, %lf / %lf = %lf\n", num1, num2, quotient);
+    else if (operator == '/') {
+        double quotient = divide(num1, num2);
+        printf("By division, %lf / %lf = %lf\n", num1, num2, quotient);
+    }
+
+    // Addition
+    // double sum = add(num1, num2);
+    // printf("By addition, %lf + %lf = %lf\n", num1, num2, sum);
+
+    // Subtraction
+    // double difference = subtract(num1, num2);
+    // printf("By subtraction, %lf - %lf = %lf\n", num1, num2, difference);
+
+    // Multiplication
+    // double product = multiply(num1, num2);
+    // printf("By multiplication, %lf * %lf = %lf\n", num1, num2, product);
+
+
+    //Division
+    // double quotient = divide(num1, num2);
+    // printf("By division, %lf / %lf = %lf\n", num1, num2, quotient);
 
     return 0;
 }
