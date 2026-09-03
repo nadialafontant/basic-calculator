@@ -8,6 +8,10 @@ double subtract (double a, double b) {
     return (a - b);
 }
 
+double multiply (double a, double b) {
+    return (a * b);
+}
+
 int main() {
     double num1, num2;
 
@@ -19,6 +23,9 @@ int main() {
 
     double difference = (num1 - num2);
     printf("By subtraction, %lf - %lf = %lf\n", num1, num2, difference);
+
+    double product = (num1 * num2);
+    printf("By multiplication, %lf * %lf = %lf\n", num1, num2, product);
 
     return 0;
 }
