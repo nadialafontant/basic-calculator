@@ -25,7 +25,10 @@ int main() {
     char operator;
 
     printf("Enter two integers and an operator (+, -, *, /): ");
-    scanf("%lf %lf %c", &num1, &num2, &operator);
+    if (scanf("%lf %lf %c", &num1, &num2, &operator) != 3) {
+        printf("Error: Invalid input! You must enter numbers followed by an operator.\n");
+        return 1;
+    }
 
     if (operator == '+') {
         double sum = add(num1, num2);
@@ -47,22 +50,14 @@ int main() {
         printf("By division, %lf / %lf = %lf\n", num1, num2, quotient);
     }
 
-    // Addition
-    // double sum = add(num1, num2);
-    // printf("By addition, %lf + %lf = %lf\n", num1, num2, sum);
+    else if (operator != '+' && operator != '-' && operator != '*' && operator != '/') {
+        printf("Error: Invalid operator. Please use +, -, *, or /.\n");
+    }
 
-    // Subtraction
-    // double difference = subtract(num1, num2);
-    // printf("By subtraction, %lf - %lf = %lf\n", num1, num2, difference);
-
-    // Multiplication
-    // double product = multiply(num1, num2);
-    // printf("By multiplication, %lf * %lf = %lf\n", num1, num2, product);
-
-
-    //Division
-    // double quotient = divide(num1, num2);
-    // printf("By division, %lf / %lf = %lf\n", num1, num2, quotient);
+    if (scanf("%lf %lf", &num1, &num2) != 2) {
+        printf("Error: Invalid input! You must enter numbers, not characters.\n");
+        return 1;
+    }
 
     return 0;
 }
